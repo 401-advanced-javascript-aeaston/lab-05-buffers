@@ -5,7 +5,7 @@
 ### Author: Adrienne, with some mob programming with class for setup
 
 ### Links and Resources
-* [submission PR]
+* [submission PR](https://github.com/401-advanced-javascript-aeaston/lab-05-buffers/pull/1)
 * [travis][![Build Status](https://travis-ci.com/401-advanced-javascript-aeaston/lab-05-buffers.svg?branch=master)](https://travis-ci.com/401-advanced-javascript-aeaston/lab-05-buffers)
 
 ### Modules
