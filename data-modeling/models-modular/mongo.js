@@ -1,51 +1,35 @@
 'use strict';
 
-/** Class representing a generic mongo model. */
+// Class representing a generic mongo model
 class Model {
-
-  /**
-   * Model Constructor
-   * @param schema {object} - mongo schema
-   */
-  constructor(schema) {
-    this.schema = schema;
+  constructor() {
+    
   }
 
-  /**
-   * Retrieves one or more records
-   * @param _id {string} optional mongo record id
-   * @returns {count:#,results:[{*}]} | {*}
-   */
+  // retrieves one or more models
   get(_id) {
-
+    if (_id) {
+      return this.schema.findOne({_id});
+    }
+    else {
+      return this.schema.find({});
+    }
   }
 
-  /**
-   * Create a new record
-   * @param record {object} matches the format of the schema
-   * @returns {*}
-   */
+  // creates a new record
   create(record) {
-
+    let newRecord = new this.schema(record);
+    return newRecord.save();
   }
 
-  /**
-   * Replaces a record in the database
-   * @param _id {string} Mongo Record ID
-   * @param record {object} The record data to replace. ID is a required field
-   * @returns {*}
-   */
+  // replaces a record in the database
   update(_id, record) {
-
+    return this.schema.findByIdAndUpdate(_id, record, {new: true});
   }
 
-  /**
-   * Deletes a recod in the model
-   * @param _id {string} Mongo Record ID
-   * @returns {*}
-   */
+  // Deletes a record in the model
   delete(_id) {
-
+    return this.schema.findByIdAndDelete(_id);
   }
 
 }
