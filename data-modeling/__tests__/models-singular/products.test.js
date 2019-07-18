@@ -8,7 +8,7 @@ describe('Products Model (Singular)', () => {
   // How will you handle both the happy path and edge cases in these tests?
 
   it('can create() a new product', () => {
-    let obj = { name: 'Mouse', price: 9.99, description: 'works good', product: 'electronics' };
+    let obj = { name: 'Mouse', price: 9.99, description: 'works good', category: 'electronics' };
       return products.create(obj)
       .then(record => {
         Object.keys(obj).forEach(key => {
@@ -18,7 +18,7 @@ describe('Products Model (Singular)', () => {
   });
 
   it('can get() a product', () => {
-    let obj = { name: 'Mouse', price: 9.99, description: 'works good', product: 'electronics' };
+    let obj = { name: 'Mouse', price: 9.99, description: 'works good', category: 'electronics' };
       return products.create(obj)
       .then(record => {
         return products.get(record._id)
