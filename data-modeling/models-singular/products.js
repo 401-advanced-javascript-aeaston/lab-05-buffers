@@ -1,8 +1,8 @@
 'use strict';
 
-const schema = require('./categories-schema.js');
+const schema = require('./products-schema.js');
 
-class Categories {
+class Products {
 
   constructor() {
   }
@@ -27,4 +27,4 @@ class Categories {
 
 }
 
-module.exports = Categories;
+module.exports = Products;
