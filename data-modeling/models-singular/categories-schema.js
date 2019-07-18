@@ -2,11 +2,9 @@
 
 const mongoose = require('mongoose');
 
-// What fields and constraints do we want?
-const product = mongoose.Schema({
-  name;{type: String, }
+const categories = mongoose.Schema({
+  name: { type: String, required: true },
+  description: { type: String },
 });
 
-
-
-module.exports = 
+module.exports = mongoose.model('categories ', categories);
